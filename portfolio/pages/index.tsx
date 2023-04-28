@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { BsGithub, BsMoonStarsFill, BsFillArrowUpCircleFill } from 'react-icons/bs'
+import { BsGithub, BsFillArrowUpCircleFill } from 'react-icons/bs'
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai'
 import { FaLine } from 'react-icons/fa'
 import Link from 'next/link'
@@ -43,8 +43,6 @@ export default function Home() {
 
     }, []);
 
-  const [darkMode, setDarkMode] = useState(false)
-
   function BacktoTopButton() {
     const [showBtn, setShowBtn] = useState(false)
 
@@ -79,22 +77,19 @@ export default function Home() {
   }
 
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <Head>
         <title>Mixer's Portfolio</title>
         <meta name="description" content="Try open it, definitely not virus" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='bg-white dark:bg-cyan-900 font-mono'>
+      <main className='bg-cyan-900 font-mono'>
         <BacktoTopButton/>
         <section className='min-h-fit md:min-h-full xl:min-h-screen'>
-          <nav className='px-2 md:px-10 py-6 mb-10 flex justify-between border-b-2 dark:border-cyan-800'>
-            <h1 className='text-base md:text-xl dark:text-white font-extrabold uppercase'>{data[0]}</h1>
+          <nav className='px-2 md:px-10 py-6 mb-10 flex justify-between border-b-2 border-cyan-800'>
+            <h1 className='text-base md:text-xl text-white font-extrabold uppercase'>{data[0]}</h1>
             <ul className='flex items-center'>
-              <li>
-                <BsMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer text-sm md:text-xl'/>
-              </li>
               <li>
                 <a className='bg-cyan-500 text-white px-1 py-2 rounded-md ml-2 text-xs md:text-base md:px-4 md:ml-6' href='#about'>About me</a>
               </li>
@@ -121,12 +116,12 @@ export default function Home() {
                   delaySpeed={1500}
               />
             </div>
-            <p className='text-sm py-5 leading-5 text-gray-800 md:text-base dark:text-white'>
+            <p className='text-sm py-5 leading-5 text-white md:text-base'>
               {data[1]}<br/> 
               {data[2]}<br/> 
               {data[3]}<br/>
             </p>
-            <h3 className='text-sm py-1 px-2 md:text-xl dark:text-white'>{data[4]}<br/> {data[5]}</h3>
+            <h3 className='text-sm py-1 px-2 md:text-xl text-white'>{data[4]}<br/> {data[5]}</h3>
           </div>
           <div className='text-2xl flex justify-center gap-6 py-3 md:text-3xl'>
             <Link href='https://www.facebook.com/mixcombo.mixer' legacyBehavior><a target="_blank"><AiFillFacebook/></a></Link>
@@ -139,7 +134,7 @@ export default function Home() {
         <section className='min-h-fit md:min-h-fit xl:min-h-screen' id='about'>
           <div>
             <h3 className='text-xl py-3 px-10 mb-8 flex justify-center bg-cyan-500 text-white md:text-3xl'>About me</h3>
-            <div className='text-center text-sm pb-5 md:text-xl dark:text-white'>
+            <div className='text-center text-sm pb-5 md:text-xl text-white'>
               <p className='px-10'>{about[0]}</p>
               <p className='px-10'>{about[1]}</p>
               <p className='px-10'>{about[2]}</p>
@@ -166,7 +161,7 @@ export default function Home() {
         <section className='min-h-fit md:min-h-fit xl:min-h-screen' id='project'>
           <div>
             <h3 className='text-xl py-3 px-10 mb-8 flex justify-center bg-cyan-500 text-white md:text-3xl'>My Projects</h3>
-            <div className='flex-wrap lg:flex lg:justify-evenly lg:py-10 dark:text-white'>
+            <div className='flex-wrap lg:flex lg:justify-evenly lg:py-10 text-white'>
               <div className='text-center h-auto px-10'>
                 <img src='cat1.jpg' className='rounded-full m-auto w-[100px] h-[100px] md:w-[200px] md:h-[200px]'/>
                 <h2 className='text-base md:text-xl'>Year 1</h2>
